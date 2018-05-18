@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektro</title>
+   
+        <link rel="stylesheet" href="css/normalize.min.css"><!-- v. 5.0.0-->
+    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'><!-- v. 3.1.1-->
+    <script src='js/jquery.min.js'></script><!-- v. 2.1.3-->
+    <script src='/js/bootstrap.min.js'></script><!-- v. 3.1.1-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand mx-auto">Elektro</a>
+        </div>
+    </nav>
+
+  <div class="container">
+    <div class="row">
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCarga">
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                    <p>Carga y Campo Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnGauss">
+                    <span class="glyphicon glyphicon-transfer"></span>
+                    <p>Ley de Gauss</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnPotencial">
+                    <span class="glyphicon glyphicon-retweet"></span>
+                    <p>Potencial Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCapacitancia">
+                    <span class="glyphicon glyphicon-inbox"></span>
+                    <p>Capacitancia y Dieléctricos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnSimulador">
+                    <span class="glyphicon glyphicon-road"></span>
+                    <p>Simulador</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnVideos">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+                    <p>Videos</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 80px">
+        <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #15701b" data-toggle="modal" data-target="#modal-gauss" onclick="hablar(<%= '\''+ consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-asterisk"></span>
+                    <p>Concepto</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #f2023a" data-toggle="modal" data-target="#modal-flujo" onclick="hablar(<%= '\''+ consulta[1].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-th"></span>
+                    <p>Flujo Electrico y Campo Electrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #9e04db"  data-toggle="modal" data-target="#modal-campo" onclick="hablar(<%= '\''+ consulta[2].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-ok"></span>
+                    <p>Calculo de Campo eléctrico uniforme y Flujo Electrico</p>
+                </button>
+            </div>
+        </div>
+        <div class="btn-group-justified">
+             <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #633ded" data-toggle="modal" data-target="#modal-ejercicios">
+                    <span class="glyphicon glyphicon-dashboard"></span>
+                    <p>Resolver Ejercicios Prácticos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #3e3c42">
+                    <span class="glyphicon glyphicon-globe"></span>
+                    <p>Aplicaciones</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+        <p>Elektro: Sistema en desarrollo para Fisica II - UTH</p>
+        <p style="color: #e92d00; font-weight: bold">Desarrollo e Implementación: Melek Sibrian, Jerson García, Samuel Ortega, Jerry García y Carlos García</p>
+</footer>
+<script type="text/javascript">
+    var activeEl = 1;
+    $(function() {
+        var items = $('.btn-nav');
+        $( items[activeEl] ).addClass('active');
+        $( ".btn-nav" ).click(function() {
+            $( items[activeEl] ).removeClass('active');
+            $( this ).addClass('active');
+            activeEl = $( ".btn-nav" ).index( this );
+        });
+    });
+</script>
+
+<!-- VENTANAS -->
+<!-- Ley de Gauss -->
+<div class="modal fade" id="modal-gauss" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Carga Eléctrica</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/gauss.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Flujo Eelctrico -->
+<div class="modal fade" id="modal-flujo" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Flujo Electrico y Campo Electrico</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/electricidad.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Campo Electrico Uniforme -->
+<div class="modal fade" id="modal-campo" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Calculo de Campo Electrico Uniforme</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/campo_electrico.gif" style="height: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Ejercicios -->
+<div class="modal fade" id="modal-ejercicios" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ejercicios Prácticos</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+            <div class="eq-c">
+                <p>Fórmula Estándar:</p>E·A = E·4·π·r<sup>2</sup> = 
+                <div class="fraction">
+                    <span class="fup"><i>Q</i></span>
+                    <span class="bar">/</span>
+                    <span class="fdn"><i>E</i><sub>0</sub></span>
+                </div>
+                <p>El campo eléctrico en el radio r estará entonces dado por:</p>E = 
+                <div class="fraction">
+                    <span class="fup"><i>Q</i></span>
+                    <span class="bar">/</span>
+                    <span class="fdn"><i>E</i><sub>0</sub>·4·π·r<sup>2</sup></span>
+                </div>
+                <!-- <p>Si se coloca en r otra carga q, experimentará una fuerza:</p>F = 
+                <div class="fraction">
+                    <span class="fup"><i>Q·q</i></span>
+                    <span class="bar">/</span>
+                    <span class="fdn"><i>E</i><sub>0</sub>·4·π·r<sup>2</sup></span>
+                </div> -->
+            </div>
+            </div>
+        <div class="col-sm-6">
+            <p style="text-align: left">Ingrese los datos necesarios, dejando sólo una incógnita con las unidades respectivas.</p>
+            <table style="text-align: left">
+                <tr><td>Carga 'Q': </td><td><input type="text" id="txtQ" placeholder="Ingresar en Coulumb">coulumbs</td></tr>
+                <tr><td>Distancia 'r': </td><td><input type="text" id="txtr" placeholder="Ingresar en metros">metros</td></tr>
+                <tr><td>Campo Electrico 'E': </td><td><input type="text" id="txtE" placeholder="Ingresar en Newton/Columbs">N/coulumb</td></tr>
+                <tr><td></td><td><button type="button" class="btn btn-sm" onclick="Calcular()">Calcular</button></td></tr>
+            </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+       function hablar(message) {
+        var speech = new SpeechSynthesisUtterance();
+        // Set the text and voice attributes.
+        speech.text = message;
+        speech.volume = 1;
+        speech.rate = 0.9;
+        speech.pitch = 1;
+        speech.lang='es-ES';
+        window.speechSynthesis.speak(speech);
+      }
+       $('#btnCarga').on('click', function() {
+        window.location.href='/';
+      });
+       $('#btnGauss').on('click', function() {
+        window.location.href='/ley_de_gauss';
+      });
+       $('#btnPotencial').on('click', function() {
+        window.location.href ='/potencial';
+      });
+       $('#btnCapacitancia').on('click', function() {
+        window.location.href ='/capacitancia';
+      });
+       function Calcular(){
+        var Epsilon= 8.85*(Math.pow(10, Number(-12)));
+        var Q=document.getElementById('txtQ').value;
+        var r=document.getElementById('txtr').value;
+        var E=document.getElementById('txtE').value;
+       
+        if((Q.indexOf('e')!=-1) || (Q.indexOf('x10^')!=-1)){
+            Q=Q.replace('x10^','^');
+            var separador = Q.split(/[e^]/);
+            Q=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+        }
+        if((r.indexOf('e')!=-1) || (r.indexOf('x10^')!=-1)){
+            r=r.replace('x10^','^');
+            var separador = r.split(/[e^]/);
+            r=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+        }
+        if((E.indexOf('e')!=-1) || (E.indexOf('x10^')!=-1)){
+            E=E.replace('x10^','^');
+            var separador = E.split(/[e^]/);
+            E=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+        }
+        if(E==0){
+            E=Q/((Epsilon*4*Math.PI)*(Math.pow(r,2)));
+            var Es=(Number(E)).toPrecision(4); Es=Es.replace('e','x10^');
+            document.getElementById('txtE').value=Es;
+        }
+        if(Q==0){
+            Q=E*(Epsilon*4*Math.PI)*(Math.pow(r,2));
+            var Qs=(Number(Q)).toPrecision(4); Qs=Qs.replace('e','x10^');
+            document.getElementById('txtQ').value=Qs;
+        }
+        if(r==0){
+            r=Math.sqrt(Q/((Epsilon*4*Math.PI)*E));
+            var rs=(Number(r)).toPrecision(4); rs=rs.replace('e','x10^');
+            document.getElementById('txtr').value=rs;
+        }
+       }
+    </script>
+</body>
+</html>

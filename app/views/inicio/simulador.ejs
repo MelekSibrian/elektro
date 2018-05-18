@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektro</title>
+   
+        <link rel="stylesheet" href="css/normalize.min.css"><!-- v. 5.0.0-->
+    <link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'><!-- v. 3.1.1-->
+    <script src='js/jquery.min.js'></script><!-- v. 2.1.3-->
+    <script src='/js/bootstrap.min.js'></script><!-- v. 3.1.1-->
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body><canvas width="900" height="400" id="lienzo" style="position: absolute; left: "></canvas>
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+	 	<div class="navbar-header">
+			<a href="" class="navbar-brand mx-auto">Elektro</a>
+		</div>
+	</nav>
+
+  <div class="container">
+    <div class="row">
+		<div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCarga">
+                    <span class="glyphicon glyphicon-asterisk"></span>
+    			    <p>Carga y Campo Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnGauss">
+                    <span class="glyphicon glyphicon-transfer"></span>
+    			    <p>Ley de Gauss</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnPotencial">
+                    <span class="glyphicon glyphicon-retweet"></span>
+    			    <p>Potencial Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCapacitancia">
+                    <span class="glyphicon glyphicon-inbox"></span>
+    			    <p>Capacitancia y Dieléctricos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnSimulador">
+                    <span class="glyphicon glyphicon-road"></span>
+    			    <p>Simulador</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnVideos">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+    			    <p>Videos</p>
+                </button>
+            </div>
+        </div>
+	</div>
+</div>
+<script type="text/javascript">
+	var activeEl = 0;
+	$(function() {
+	    var items = $('.btn-nav');
+	    $( items[activeEl] ).addClass('active');
+	    $( ".btn-nav" ).click(function() {
+	        $( items[activeEl] ).removeClass('active');
+	        $( this ).addClass('active');
+	        activeEl = $( ".btn-nav" ).index( this );
+	    });
+	});
+
+	$('#btnCarga').on('click', function() {
+        window.location.href='/';
+      });
+       $('#btnGauss').on('click', function() {
+        window.location.href='/ley_de_gauss';
+      });
+       $('#btnPotencial').on('click', function() {
+        window.location.href ='/potencial';
+      });
+       $('#btnCapacitancia').on('click', function() {
+        window.location.href ='/capacitancia';
+      });
+       $('#btnSimulador').on('click', function() {
+        window.location.href ='/simulador';
+      });
+</script>
+	<div class="row">
+		<p></p>
+	</div>
+	<div class="row">
+		
+	</div>
+
+<script>
+var cv, cx, objetos, objetos2, objetoActual = null, objetoActual2 = null;
+var imagen = new Image();
+
+var inicioX = 0, inicioY =0;
+function actualizar (){
+	cx.fillStyle = '#f0f0f0';
+	cx.fillRect(0,0, 900, 900);
+for (var i = 0; i < objetos.length; i++){
+	cx.fillStyle = objetos[i].color;
+	//imagen.src="img/"+ i +".png";
+	imagen.src="gifs/barra-de-ebonita.gif";
+	cx.drawImage(imagen,objetos[i].x, objetos[i].y, objetos[i].width, objetos[i].height);
+}
+
+}
+window.onload = function(){
+objetos = [];
+cv = document.getElementById('lienzo');
+cx = cv.getContext('2d');
+//Agregar ojetos de prueba
+
+objetos.push({
+	x: 0, y: 0,
+	width: 100, height: 200,
+	color: '#00f'
+	});
+
+	actualizar();
+	
+	cv.onmousedown = function(event){
+		for (var i = 0; i < objetos.length; i++){
+		if(objetos[i].x < event.clientX 
+		&& (objetos[i].width + objetos[i].x > event.clientX)
+		&& objetos[i].y < event.clientY 
+		&& (objetos[i].height + objetos[i].y > event.clientY)){
+		objetoActual = objetos[i];
+		inicioY = event.clientY - objetos[i].y;
+		inicioX = event.clientX - objetos[i].x;
+		break;
+		}
+		}
+	};
+	cv.onmousemove = function(event){
+	if(objetoActual != null){
+		objetoActual.x = event.clientX - inicioX;
+		objetoActual.y = event.clientY - inicioY;
+		actualizar();
+	}
+
+	};
+	cv.onmouseup = function(event){
+	
+		objetoActual = null;
+	}
+};
+</script>
+</body>
+</html>

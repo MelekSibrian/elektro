@@ -1,0 +1,20 @@
+{
+  "name": "elektro",
+  "version": "1.0.0",
+  "description": "IA de Fisica II",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Melek Sibrian",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "mysql": "^2.15.0",
+    "speak-tts": "^1.1.0"
+  }
+}

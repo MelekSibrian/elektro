@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektro</title>
+   
+		<link rel="stylesheet" href="css/normalize.min.css"><!-- v. 5.0.0-->
+  	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'><!-- v. 3.1.1-->
+  	<script src='js/jquery.min.js'></script><!-- v. 2.1.3-->
+	<script src='/js/bootstrap.min.js'></script><!-- v. 3.1.1-->
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+	 	<div class="navbar-header">
+			<a href="" class="navbar-brand mx-auto">Elektro</a>
+		</div>
+	</nav>
+
+  <div class="container">
+    <div class="row">
+		<div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCarga">
+                    <span class="glyphicon glyphicon-asterisk"></span>
+    			    <p>Carga y Campo Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" >
+                    <span class="glyphicon glyphicon-transfer"></span>
+    			    <p>Ley de Gauss</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav">
+                    <span class="glyphicon glyphicon-retweet"></span>
+    			    <p>Potencial Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav">
+                    <span class="glyphicon glyphicon-inbox"></span>
+    			    <p>Capacitancia y Dieléctricos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav">
+                    <span class="glyphicon glyphicon-road"></span>
+    			    <p>Simulador</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+    			    <p>Videos</p>
+                </button>
+            </div>
+        </div>
+	</div>
+<div class="alert alert-warning" style="margin-top: 50px; margin-bottom: 70px">
+  <strong>Atención!</strong> No se encontraron temas registrados en este capitulo.
+</div>
+	
+<footer class="footer">
+        <p>Elektro: Sistema en desarrollo para Fisica II - UTH</p>
+        <p style="color: #e92d00; font-weight: bold">Desarrollo e Implementación: Melek Sibrian, Jerson García, Samuel Ortega, Jerry García y Carlos García</p>
+</footer>
+<script type="text/javascript">
+	var activeEl = 0;
+	$(function() {
+	    var items = $('.btn-nav');
+	    $( items[activeEl] ).addClass('active');
+	    $( ".btn-nav" ).click(function() {
+	        $( items[activeEl] ).removeClass('active');
+	        $( this ).addClass('active');
+	        activeEl = $( ".btn-nav" ).index( this );
+	    });
+	});
+</script>
+
+
+<script type="text/javascript">
+       function hablar(message) {
+        var speech = new SpeechSynthesisUtterance();
+        
+        // Set the text and voice attributes.
+        speech.text = message;
+        speech.volume = 1;
+        speech.rate = 0.9;
+        speech.pitch = 1;
+        speech.lang='es-ES';
+        
+        window.speechSynthesis.speak(speech);
+      }
+      $('#btnCarga').on('click', function() {
+        window.location.href='/';
+      });
+       $('#btnGauss').on('click', function() {
+        window.location.href='/ley_de_gauss';
+      });
+       $('#btnCapacitancia').on('click', function() {
+        window.location.href ='/capacitancia';
+      });
+    </script>
+</body>
+</html>

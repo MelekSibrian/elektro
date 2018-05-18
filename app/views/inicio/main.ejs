@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektro</title>
+   
+		<link rel="stylesheet" href="css/normalize.min.css"><!-- v. 5.0.0-->
+  	<link rel='stylesheet prefetch' href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'><!-- v. 3.1.1-->
+  	<script src='js/jquery.min.js'></script><!-- v. 2.1.3-->
+	<script src='/js/bootstrap.min.js'></script><!-- v. 3.1.1-->
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+	 	<div class="navbar-header">
+			<a href="" class="navbar-brand mx-auto">Elektro</a>
+		</div>
+	</nav>
+
+  <div class="container">
+    <div class="row">
+		<div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCarga">
+                    <span class="glyphicon glyphicon-asterisk"></span>
+    			    <p>Carga y Campo Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnGauss">
+                    <span class="glyphicon glyphicon-transfer"></span>
+    			    <p>Ley de Gauss</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnPotencial">
+                    <span class="glyphicon glyphicon-retweet"></span>
+    			    <p>Potencial Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnCapacitancia">
+                    <span class="glyphicon glyphicon-inbox"></span>
+    			    <p>Capacitancia y Dieléctricos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnSimulador">
+                    <span class="glyphicon glyphicon-road"></span>
+    			    <p>Simulador</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" id="btnVideos">
+                    <span class="glyphicon glyphicon-facetime-video"></span>
+    			    <p>Videos</p>
+                </button>
+            </div>
+        </div>
+	</div>
+
+	<div class="row" style="padding-top: 80px">
+		<div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #15701b" data-toggle="modal" data-target="#modal-carga" onclick="hablar(<%= '\''+ consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-asterisk"></span>
+    			    <p>Carga Eléctrica</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #f2023a" data-toggle="modal" data-target="#modal-estructura" onclick="hablar(<%= '\''+ consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-th"></span>
+    			    <p>Estructura de la Materia</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #9e04db"  data-toggle="modal" data-target="#modal-conductor" onclick="hablar(<%= '\''+ consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-ok"></span>
+    			    <p>Conductores</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #edb304" data-toggle="modal" data-target="#modal-aislante" onclick="hablar(<%= '\''+ consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-ban-circle"></span>
+    			    <p>Aislantes</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #4df263" data-toggle="modal" data-target="#modal-inducida" onclick="hablar(<%= '\''+ consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-resize-full"></span>
+    			    <p>Cargas Inducidas</p>
+                </button>
+            </div>
+		</div>
+		<div class="btn-group-justified">
+			   <div class="btn-group">
+              <button type="button" class="btn btn-nav" style="background-color: #4e7c04" data-toggle="modal" data-target="#modal-coulumb" onclick="hablar(<%= '\'la ley de coulumb es muy interesante. '+  consulta[0].concepto +'\'' %>)">
+                    <span class="glyphicon glyphicon-euro"></span>
+    			    <p>Ley de Coulumb</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #162775">
+                    <span class="glyphicon glyphicon-link"></span>
+    			    <p>Campo Eléctrico</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #4980ed">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+    			    <p>Cálculo de Campos Eléctricos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #4980ed">
+                    <span class="glyphicon glyphicon-repeat"></span>
+    			    <p>Líneas de Campos Eléctricos</p>
+                </button>
+            </div>
+		</div>
+		<div class="btn-group-justified">
+			 <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #f9be48">
+                    <span class="glyphicon glyphicon-resize-small"></span>
+    			    <p>Dipolos Eléctricos</p>
+                </button>
+            </div>
+             <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #633ded" data-toggle="modal" data-target="#modal-ejercicios">
+                    <span class="glyphicon glyphicon-dashboard"></span>
+    			    <p>Resolver Ejercicios Prácticos</p>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav" style="background-color: #3e3c42">
+                    <span class="glyphicon glyphicon-globe"></span>
+    			    <p>Aplicaciones</p>
+                </button>
+            </div>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+        <p>Elektro: Sistema en desarrollo para Fisica II - UTH</p>
+        <p style="color: #e92d00; font-weight: bold">Desarrollo e Implementación: Melek Sibrian, Jerson García, Samuel Ortega, Jerry García y Carlos García</p>
+</footer>
+<script type="text/javascript">
+	var activeEl = 0;
+	$(function() {
+	    var items = $('.btn-nav');
+	    $( items[activeEl] ).addClass('active');
+	    $( ".btn-nav" ).click(function() {
+	        $( items[activeEl] ).removeClass('active');
+	        $( this ).addClass('active');
+	        activeEl = $( ".btn-nav" ).index( this );
+	    });
+	});
+</script>
+
+<!-- VENTANAS -->
+<!-- Carga Electrica -->
+<div class="modal fade" id="modal-carga" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Carga Eléctrica</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/barra-de-ebonita.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Estructura de la Materia -->
+<div class="modal fade" id="modal-estructura" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Estructura de la Materia</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/estructura.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Conductores -->
+<div class="modal fade" id="modal-conductor" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Conductor Electrico</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/conductor.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Aislante -->
+<div class="modal fade" id="modal-aislante" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Aislante Electrico</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/aislante.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Inducida -->
+<div class="modal fade" id="modal-inducida" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Cargas Inducidas</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/inducida.gif" style="width: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Ley de Columb -->
+<div class="modal fade" id="modal-coulumb" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ley de Coulumb</h4>
+      </div>
+      <div class="modal-body">
+        <p><img src="gifs/coulumb.gif" style="height: 90%"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Ejercicios -->
+<div class="modal fade" id="modal-ejercicios" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Ejercicios Prácticos</h4>
+      </div>
+      <div class="modal-body">
+      	<div class="row">
+        	<div class="col-sm-6">
+        	<div class="eq-c">
+        		<p>Fórmula Estándar:</p>F=
+        		<div class="fraction">
+					<span class="fup"><i>k</i>(q<sub>1</sub> · q<sub>2</sub>)</span>
+					<span class="bar">/</span>
+					<span class="fdn"><i>r</i><sup>2</sup></span>
+        		</div>
+        	</div>
+        	</div>
+        <div class="col-sm-6">
+        	<p style="text-align: left">Ingrese los datos necesarios, dejando sólo una incógnita con las unidades respectivas.</p>
+        	<table style="text-align: left">
+        		<tr><td>Carga 1: </td><td><input type="text" id="txtq1" placeholder="Ingresar en Coulumb">coulumbs</td></tr>
+        		<tr><td>Carga 2: </td><td><input type="text" id="txtq2" placeholder="Ingresar en Coulumb">coulumbs</td></tr>
+        		<tr><td>Distancia: </td><td><input type="text" id="txtr" placeholder="Ingresar en metros">metros</td></tr>
+        		<tr><td>Fuerza: </td><td><input type="text" id="txtResult" placeholder="Ingresar la Fuerza">Newton</td></tr>
+        		<tr><td></td><td><button type="button" class="btn btn-sm" onclick="Calcular()">Calcular</button></td></tr>
+        	</table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+      function navegador(){
+          var agente = window.navigator.userAgent;
+          var navegadores = ["Chrome", "Firefox", "Safari", "Opera", "Trident", "MSIE", "Edge"];
+          for(var i in navegadores){
+              if(agente.indexOf( navegadores[i]) != -1 ){
+                  return navegadores[i];
+              }
+          }
+      }
+       function hablar(message) {
+        var speech = new SpeechSynthesisUtterance();
+        // Set the text and voice attributes.
+        speech.text = message;
+        speech.volume = 1;
+        speech.rate = 0.9;
+        speech.pitch = 1;
+        var browser = document.getElementById("navegador");
+        if (navegador()=="Firefox")
+          speech.lang='es-ES_tradnl';
+        else
+          speech.lang='es-ES';
+        window.speechSynthesis.speak(speech);
+      }
+       $('#btnCarga').on('click', function() {
+        window.location.href='/';
+      });
+       $('#btnGauss').on('click', function() {
+        window.location.href='/ley_de_gauss';
+      });
+       $('#btnPotencial').on('click', function() {
+        window.location.href ='/potencial';
+      });
+       $('#btnCapacitancia').on('click', function() {
+        window.location.href ='/capacitancia';
+      });
+       $('#btnSimulador').on('click', function() {
+        window.location.href ='/simulador';
+      });
+       function Calcular(){
+       	var k= 9*(Math.pow(10,9));
+       	var q1=document.getElementById('txtq1').value;
+       	var q2=document.getElementById('txtq2').value;
+       	var r=document.getElementById('txtr').value;
+       	var F=document.getElementById('txtResult').value;
+       	if((q1.indexOf('e')!=-1) || (q1.indexOf('x10^')!=-1)){
+       		q1=q1.replace('x10^','^');
+       		var separador = q1.split(/[e^]/);
+       		q1=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+       	}
+       	if((q2.indexOf('e')!=-1) || (q2.indexOf('x10^')!=-1)){
+       		q2=q2.replace('x10^','^');
+       		var separador = q2.split(/[e^]/);
+       		q2=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+       	}
+       	if((r.indexOf('e')!=-1) || (r.indexOf('x10^')!=-1)){
+       		r=r.replace('x10^','^');
+       		var separador = r.split(/[e^]/);
+       		r=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+       	}
+       	if((F.indexOf('e')!=-1) || (F.indexOf('x10^')!=-1)){
+       		F=F.replace('x10^','^');
+       		var separador = F.split(/[e^]/);
+       		F=Number(separador[0])*(Math.pow(10, Number(separador[1])));
+       	}
+       	if(F==0){
+       		F=(k*(Math.abs(q1*q2)))/(Math.pow(r,2));
+       		var Fs=(Number(F)).toPrecision(4); Fs=Fs.replace('e','x10^');
+       		document.getElementById('txtResult').value=Fs;
+       	}
+       	if(q1==0){
+       		q1=(F*(Math.pow(r,2)))/(k*(Math.abs(q2)));
+       		var qs=(Number(q1)).toPrecision(4); qs=qs.replace('e','x10^');
+       		document.getElementById('txtq1').value=qs;
+       	}
+       	if(q2==0){
+       		q2=(F*(Math.pow(r,2)))/(k*(Math.abs(q1)));
+       		var qs=(Number(q2)).toPrecision(4); qs=qs.replace('e','x10^');
+       		document.getElementById('txtq2').value=qs;
+       	}
+       	if(r==0){
+       		r=Math.sqrt((k*(Math.abs(q1*q2)))/F);
+       		var rs=(Number(r)).toPrecision(4); rs=rs.replace('e','x10^');
+       		document.getElementById('txtr').value=rs;
+       	}
+       }
+    </script>
+</body>
+</html>
