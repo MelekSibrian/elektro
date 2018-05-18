@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Elektro.exe" version="1.0.0.3" publicKeyToken="1c3e2a1bafd07fb4" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icono.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Elektro" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Elektro.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de UAC
+          Si desea cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el 
+          nodo requestedExecutionLevel por uno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar Virtualización de archivos y Registro para compatibilidad con 
+         versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Elektro.exe" size="1506256">
+      <assemblyIdentity name="Elektro" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>pbVnzymIVOe/K16NBsmfrRbR7YA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icono.ico" size="135179">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>knw1uRU7m7h2Ov2q8gFvZXE7d3Q=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=Atomic\MelekSibrian" issuerKeyHash="1278d713ba00beb10ceec4551007cc003a274ef4" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>/U7p5InKU/nywEEOEj3Yl4d9IBw=</DigestValue></Reference></SignedInfo><SignatureValue>rUxhfMGaooPGoZ97sdKOl8eAGQ0GT8FItRwFaD4uktMBW08lD1DJRwPpNHX7kKOGVWFH79felY5P6sfG4jJkhMICS1zs2AQTm8bT3m+tgJEgPAtqV3Q7bAGH0AAL7TITued5G9ZuZ6k2pXd1qC07WNSekFjzsbOXT6VMyZy/yIE=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>0yAe+u9ptBeoIceZrYcCExVZjG84iw88BbBz9a9gWJ+VnV3C87iqMWSv09NQaxPWP03Iv4khf2wQlNkeclzGtVra26GV01avyYQfUBq0h5mJrG9thCC3o2Sz25OV/YYQJw+411/vChzvjwnANRgk6YV7wc1P0jF9K6nKnQ+PIfs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="1c207d8797d83d120e41c0f2f953ca89e4e94efd" Description="" Url=""><as:assemblyIdentity name="Elektro.exe" version="1.0.0.3" publicKeyToken="1c3e2a1bafd07fb4" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=Atomic\MelekSibrian</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>vdnjRApT1YzYjUxHpJ+8iLOTS+c=</DigestValue></Reference></SignedInfo><SignatureValue>TlZ896oEPNvr7oGijRgAbzOVr6Prghnb5y1ouTOeaTyjMfhcjCyZedJmCcnMGzLCUeHdUQZ6RoJn3Id+lwJ1ul+h31E06WWinNzmTtqJ7mCp1hEySuwX+f8Xyji3EzMOu2r86XquC43xtmm/zlA6EvyIIaIxbRzzkVRSGrD9bZA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>0yAe+u9ptBeoIceZrYcCExVZjG84iw88BbBz9a9gWJ+VnV3C87iqMWSv09NQaxPWP03Iv4khf2wQlNkeclzGtVra26GV01avyYQfUBq0h5mJrG9thCC3o2Sz25OV/YYQJw+411/vChzvjwnANRgk6YV7wc1P0jF9K6nKnQ+PIfs=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB5TCCAU6gAwIBAgIQGKAPcAA5p5lPjf6AmTNfEjANBgkqhkiG9w0BAQUFADAxMS8wLQYDVQQDHiYAQQB0AG8AbQBpAGMAXABNAGUAbABlAGsAUwBpAGIAcgBpAGEAbjAeFw0xODA1MTcyMzIxMzBaFw0xOTA1MTgwNTIxMzBaMDExLzAtBgNVBAMeJgBBAHQAbwBtAGkAYwBcAE0AZQBsAGUAawBTAGkAYgByAGkAYQBuMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDTIB7672m0F6ghx5mthwITFVmMbziLDzwFsHP1r2BYn5WdXcLzuKoxZK/T01BrE9Y/Tci/iSF/bBCU2R5yXMa1WtrboZXTVq/JhB9QGrSHmYmsb22EILejZLPbk5X9hhAnD7jXX+8KHO+PCcA1GCTphXvBzU/SMX0rqcqdD48h+wIDAQABMA0GCSqGSIb3DQEBBQUAA4GBADHzEigyFx18RkUb37oysFtn0FbmkQ2G0wlgRVf3/035k2vbwvW3pFpCQpWfW1sUhZEZhBy5lU1AvAHDhOfLHfafxgJ8/xs/K7aOvdid1uAzzhsaR0NZ19E/5bamZEqmmvEfSP0hPYsXSVaiq2qq8zd5MaVc9tnY7Cu5YJXvNl8p</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

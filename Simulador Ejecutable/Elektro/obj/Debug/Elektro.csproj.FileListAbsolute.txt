@@ -1,0 +1,27 @@
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\bin\Debug\Elektro.exe
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\bin\Debug\Elektro.pdb
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.csprojResolveAssemblyReference.cache
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.Form1.resources
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.Properties.Resources.resources
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.csproj.GenerateResource.Cache
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.exe
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.pdb
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.ElegirNodos.resources
+C:\Users\Melek Sibrian\Documents\software\Proyectos\Elektro\Elektro\obj\Debug\Elektro.Launcher.resources
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\bin\Debug\Elektro.exe
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\bin\Debug\Elektro.pdb
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.csprojResolveAssemblyReference.cache
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.ElegirNodos.resources
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.Form1.resources
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.Launcher.resources
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.Properties.Resources.resources
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.csproj.GenerateResource.cache
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.csproj.CoreCompileInputs.cache
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.exe
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.pdb
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.frmAcerca.resources
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\bin\Debug\Elektro.exe.manifest
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\bin\Debug\Elektro.application
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.exe.manifest
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\obj\Debug\Elektro.application
+C:\Users\MelekSibrian\Documents\Proyectos\Elektro\Elektro\bin\Debug\Elektro.exe.config
