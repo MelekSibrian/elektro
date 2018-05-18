@@ -4,3 +4,5 @@ Proyecto de Simulador de Circuitos Electricos, dividido en una Versión Javascri
 Hay que tener en cuenta que para poder usar la aplicación ejecutable "Elekctro.exe" hay que tener instalado .NetFramework 4.0, en el caso de tener como sistema operativo Windows 7, Vista o XP; en el caso de Windows 10 no hace falta, ya que viene preinstalado en el sistema.
 
 Para poder hacer uso de la aplicación web, se debe tener instalado nodejs, mysql y un servidor apache.
+
+Si se desea modificar o colaborar en el simulador de circuitos, debe instalar previamente Visual Studio, preferiblemente "Visual Studio 2017 Community".
